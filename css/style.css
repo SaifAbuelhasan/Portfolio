@@ -274,6 +274,17 @@ header {
     }    
 }
 
+.typing::after {
+    content: "|";
+    width: 100%;
+    color: white;
+    animation: caret 1s infinite;
+}
+
+@keyframes caret {
+    50% { color: transparent }
+}
+
 /* My services section */
 .my-services {
     background-color: var(--clr-dark);
