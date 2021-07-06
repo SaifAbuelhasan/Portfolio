@@ -344,26 +344,6 @@ header {
     box-shadow: var(--bs);
 }
 
-/*@media (min-width: 600px) {
-    .about-me {
-        display: grid;
-        grid-column-gap: 1em;
-        width: min-content;
-        margin: 0 auto;
-        grid-template-areas:
-            "title img"
-            "subtitle img"
-            "body img";
-        grid-template-columns: 50em min-content;
-    }
-
-    .about__img {
-        grid-area: img;
-        min-width: 200px;
-    }
-
-}*/
-
 @media (min-width: 600px) {
     .about-me {
         display: grid;
@@ -404,6 +384,100 @@ header {
     text-align: center;    
 }
 
+.timeline {
+    position: relative;
+    padding-top: 2em;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    background: var(--clr-light);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 0.5em;
+}
+
+.project-container {
+        position: relative;
+        width: 100%;
+        padding: 1em 2.5em;
+        padding-right: 0.5em;
+}
+
+.project-container::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    width: 0;
+    left: 1.5em;
+    top: 2em;
+    border: medium solid var(--clr-light);
+    border-width: 1em 1em 1em 0;
+    border-color: transparent var(--clr-light) transparent transparent;
+}
+
+.project-container::after {
+    content: "";
+    position: absolute;
+    width: 1.6em;
+    height: 1.6em;
+    top: 2em;
+    left: -0.55em;
+    background: var(--clr-light);
+    border: 0.25em solid var(--clr-accent);
+    border-radius: 50%;
+}
+
+.project {
+    background: var(--clr-light);
+    color: var(--clr-dark);
+    border-radius: 1em;
+    max-width: 480px;
+    overflow: hidden;
+}
+
+.project__description {
+    padding: 1em;
+}
+
+@media (min-width: 1000px) {
+    .timeline::before {
+        left: 50%;
+    }
+
+    .project-container {
+        width: 50%;
+    }
+
+    .left {
+        padding-left: 0.5em;
+        padding-right: 2.5em;
+    }
+
+    .left::before {
+        right: 1.5em;
+        left: auto;
+        border-width: 1em 0 1em 1em;
+        border-color: transparent transparent transparent var(--clr-light);
+    }
+
+    .left::after {
+        left: calc(100% - 0.55em);
+    }
+
+    .left .project {
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    .right {
+        left: 50%;
+    }
+}
+
+  
 .portfolio {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
