@@ -127,6 +127,11 @@ h3 { font-size: var(--fs-h3) }
     margin-bottom: 2em;
 }
 
+.skills__list {
+    color: var(--clr-accent);
+    font-weight: var(--fw-bold);
+}
+
 /* header */
 
 .logo {
@@ -285,8 +290,8 @@ header {
     50% { color: transparent }
 }
 
-/* My services section */
-.my-services {
+/* My skills section */
+.my-skills {
     background-color: var(--clr-dark);
     background-image: url(../img/services-bg.jpg);
     background-size: cover;
@@ -295,13 +300,13 @@ header {
     text-align: center;
 }
 
-.section__title--services {
+.section__title--skills {
     color: var(--clr-accent);
     position: relative;
 }
 
 /* Create the little line below the title */
-.section__title--services::after {
+.section__title--skills::after {
     content: '';
     display: block;
     width: 25%;
@@ -311,27 +316,35 @@ header {
     opacity: 0.25;
 }
 
-.services {
+.skills {
     margin-bottom: 4em;
 }
 
-.service {
+.skill {
     max-width: 500px;
     margin: 0 auto;
+    margin-bottom: 2em;
+}
+
+.skills__list {
+    list-style-type: none;
+    padding: 0;
 }
 
 @media (min-width: 800px) {
-    .services {
-        display: flex;
-        max-width: 1000px;
+    .skills {
+        display: grid;
+        /*flex-wrap: wrap;*/
+        max-width: 1200px;
         margin-left: auto;
         margin-right: auto;
+        grid-template-columns: 1fr 1fr 1fr;
     }
 
-    /* Add space between services */
-    .service + .service {
+    /* Add space between skills */
+    /*.skill + .skill {
         margin-left: 2em;
-    }
+    }*/
 }
 
 /* About section */
