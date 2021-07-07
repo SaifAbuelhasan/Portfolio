@@ -1,0 +1,1 @@
+change intro subtitle font at smaller screen size

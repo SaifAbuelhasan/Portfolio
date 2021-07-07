@@ -135,13 +135,15 @@ h3 { font-size: var(--fs-h3) }
 /* header */
 
 .logo {
-    max-width: 100px;
+    max-width: 70px;
 }
 
 header {
     display: flex;
     justify-content: space-between; /*Content spreads out evenly in given space*/
-    padding: 1em;
+    padding: 0.3em;
+    background: rgba(48, 48, 48, 0.3);
+    align-items: center;
 }
 
 .nav {
@@ -176,7 +178,7 @@ header {
     text-decoration: none;
 }
 
-.nav__link:hover {
+.nav__item:hover {
     color: var(--clr-accent);
 }
 
@@ -219,8 +221,8 @@ header {
 .hamburger::before,
 .hamburger::after {
     background: var(--clr-accent);
-    width: 2em;
-    height: 3px;
+    width: 2.2em;
+    height: 4px;
     border-radius: 1em;
     transition: transform 250ms ease-in-out;
 }
@@ -236,6 +238,36 @@ header {
 .hamburger::before { top: 6px; }
 
 .hamburger::after { bottom: 6px; }
+
+@media (min-width: 800px) {
+    header {
+        padding: 0;
+    }
+    .nav {
+        position: static;
+        background: none;
+        transform: none;
+    }
+
+    .nav__list {
+        flex-direction: row;
+    }
+
+    .nav__item {
+        /*background: var(--clr-accent);*/
+        padding: 0.6em 0.6em;
+        color: var(--clr-dark);
+    }
+
+    .nav__item:hover {
+        color: var(--clr-light);
+        background: var(--clr-dark);
+    }
+
+    .nav-toggle {
+        display: none;
+    }
+}
 
 /* Intro section */
 
@@ -340,11 +372,6 @@ header {
         margin-right: auto;
         grid-template-columns: 1fr 1fr 1fr;
     }
-
-    /* Add space between skills */
-    /*.skill + .skill {
-        margin-left: 2em;
-    }*/
 }
 
 /* About section */
