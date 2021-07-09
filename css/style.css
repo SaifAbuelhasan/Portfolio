@@ -416,6 +416,10 @@ header {
     }
 }
 
+.row-name {
+    font-weight: bold;
+}
+
 /* My Work */
 
 .my-work {
