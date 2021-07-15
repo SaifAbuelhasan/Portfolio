@@ -311,7 +311,9 @@ header {
     }    
 }
 
-.typing::after {
+.typing-intro::after,
+.typing-about::after
+ {
     content: "|";
     width: 100%;
     color: white;
