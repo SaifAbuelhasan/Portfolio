@@ -21,6 +21,8 @@
     --fs-h2: 2.25rem;
     --fs-h3: 1.25rem;
     --fs-body: 1rem;
+    --fs-icon: 1.8rem;
+    --fs-icon-hover: 2rem;
     --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25); /*h-offset | v-offset | blur radius | color*/
 }
 
@@ -113,6 +115,11 @@ h3 { font-size: var(--fs-h3) }
     font-size: var(--fs-h3);
 }
 
+.resume {
+    font-size: var(--fs-h3);
+    font-weight: 600;
+}
+
 .section__subtitle--intro,
 .section__subtitle--about {
     background: var(--clr-accent);
@@ -138,13 +145,39 @@ h3 { font-size: var(--fs-h3) }
     max-width: 70px;
 }
 
+
+.header-container {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
 header {
+    position: relative;
+    width: 100%;
     display: flex;
     justify-content: space-between; /*Content spreads out evenly in given space*/
     padding: 0.3em;
-    background: hsla(0,0%,80%,.3);
-    backdrop-filter: blur(5px);
+/*    background: hsla(0,0%,80%,.3);
+    backdrop-filter: blur(5px);*/
     align-items: center;
+}
+
+.header-background {
+    position: absolute;
+    background: hsla(0, 0%, 80%, .3);
+    backdrop-filter: blur(5px);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.nav-open header {
+    backdrop-filter: none;
 }
 
 .nav {
@@ -156,7 +189,6 @@ header {
     left: 0;
     right: 0;
     z-index: 100;
-
     transform: translateX(100%);
     transition: transform 250ms cubic-bezier(0.5, 0, 0.5, 1);
 }
@@ -260,6 +292,10 @@ header {
         color: var(--clr-dark);
     }
 
+    .light-items .nav__item {
+        color: var(--clr-light);
+    }
+
     .nav__item:hover {
         color: var(--clr-light);
         background: var(--clr-dark);
@@ -292,6 +328,24 @@ canvas {
     box-shadow: var(--bs);
 }
 
+.resume__link {
+    color: inherit;
+    font-size: var(--fs-icon);
+    padding: 0 0.5em;
+}
+
+.resume__link:hover {
+    color: var(--clr-accent);
+}
+
+.resume__link i {
+    transition: transform 200ms ease-in-out;
+}
+
+.resume__link i:hover {
+    transform: scale(1.2);
+}
+
 @media (min-width: 600px) {
     .intro {
         display: grid;
@@ -300,7 +354,8 @@ canvas {
         margin: 0 auto; /*auto horizontally centers intro within container*/
         grid-template-areas: 
             "img title"
-            "img subtitle"; 
+            "img subtitle"
+            "img resume"; 
         grid-template-columns: min-content max-content; /*min-content takes the least possible space while max takes  the most*/
     }
     
@@ -321,7 +376,11 @@ canvas {
         position: relative;
         left: -1.5em;
         width: calc(100% + 1.5em);
-    }    
+    }
+    .resume {
+        margin: auto 0;
+        text-align: left;
+    }
 }
 
 .typing-intro::after,
