@@ -145,17 +145,35 @@ h3 { font-size: var(--fs-h3) }
     max-width: 70px;
 }
 
-header {
+
+.header-container {
     position: fixed;
     width: 100%;
     z-index: 10;
+}
+
+header {
+    position: relative;
+    width: 100%;
     display: flex;
     justify-content: space-between; /*Content spreads out evenly in given space*/
     padding: 0.3em;
-    background: hsla(0,0%,80%,.3);
-    /*transition: backdrop-filter 250ms;*/
-    backdrop-filter: blur(5px);
+/*    background: hsla(0,0%,80%,.3);
+    backdrop-filter: blur(5px);*/
     align-items: center;
+}
+
+.header-background {
+    position: absolute;
+    background: hsla(0, 0%, 80%, .3);
+    backdrop-filter: blur(5px);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
 }
 
 .nav-open header {
