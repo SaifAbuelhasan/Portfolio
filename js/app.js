@@ -1,8 +1,10 @@
 // global variables/constants
 const navToggle = document.querySelector(".nav-toggle");
 const navLinks = document.querySelectorAll('.nav__link');
+const navList = document.querySelector(".nav__list");
 const introSubtitle = document.querySelector(".typing-intro");
 const aboutSubtitle = document.querySelector(".typing-about");
+const skillsSection = document.querySelector(".my-skills");
 const aboutText = "Student & developer based in Ismailia, Egypt";
 
 // Control navbar
@@ -79,19 +81,33 @@ async function subtitleLoop() {
 subtitleLoop();
 
 // About Me section typing animation
-let scrolled = false;
+let aboutSectionScrolled = false;
 
 function checkAboutSection() {
   if (aboutSubtitle.getBoundingClientRect().top <= 600) {
-    scrolled = true;
+    aboutSectionScrolled = true;
     type(aboutText, 0, "ABOUT");
+  }
+}
+
+function checkSkillsSection() {
+  let skillsBox =  skillsSection.getBoundingClientRect();
+  let marker1 = skillsBox.bottom - skillsBox.height;
+  let marker2 = skillsBox.height + skillsBox.top;
+
+  if (marker1 < 25 && marker2 > 25) {
+    navList.classList.add("light-items");
+  } else {
+    navList.classList.remove("light-items");
   }
 }
 
 // Listen to scroll event
 document.addEventListener("scroll", () => {
   // If about me subtitle isn't typed check if it's within viewport to type
-  if (!scrolled) {
+  if (!aboutSectionScrolled) {
     checkAboutSection();
   }
+
+  checkSkillsSection()
 })

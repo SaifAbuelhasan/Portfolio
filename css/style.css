@@ -292,6 +292,10 @@ header {
         color: var(--clr-dark);
     }
 
+    .light-items .nav__item {
+        color: var(--clr-light);
+    }
+
     .nav__item:hover {
         color: var(--clr-light);
         background: var(--clr-dark);
