@@ -347,11 +347,14 @@ canvas {
 }
 
 @media (min-width: 600px) {
+    .intro-container {
+        padding-top: 12.5em;
+        padding-bottom: 12.5em;
+    }
     .intro {
         display: grid;
         grid-column-gap: 1em;
-        padding-top: 12.5em;
-        padding-bottom: 12.5em;
+        padding: 2em 2em;
         width: min-content; /*becomes as small as content would allow*/
         margin: 0 auto; /*auto horizontally centers intro within container*/
         grid-template-areas: 
@@ -359,6 +362,9 @@ canvas {
             "img subtitle"
             "img resume"; 
         grid-template-columns: min-content max-content; /*min-content takes the least possible space while max takes  the most*/
+        background: hsla(0, 0%, 80%, .3);
+        backdrop-filter: blur(2px);
+        border-radius: .5em;
     }
     
     .intro__img {
