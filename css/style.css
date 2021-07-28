@@ -350,6 +350,8 @@ canvas {
     .intro {
         display: grid;
         grid-column-gap: 1em;
+        padding-top: 12.5em;
+        padding-bottom: 12.5em;
         width: min-content; /*becomes as small as content would allow*/
         margin: 0 auto; /*auto horizontally centers intro within container*/
         grid-template-areas: 
