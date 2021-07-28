@@ -71,7 +71,7 @@ async function type(string, counter=0, section="INTRO") {
 
 // Loop through subtitles
 async function subtitleLoop() {
-  const subtitlesArr = ["Engineering Student", "Web Developer", "Learner", "Animal Lover", "Chess Player"];
+  const subtitlesArr = ["Engineering Student", "Web Developer", "Learner", "Pet person", "Chess Player"];
 
   for(let subtitle of subtitlesArr) {
     await type(subtitle);
