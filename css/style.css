@@ -330,6 +330,10 @@ canvas {
     box-shadow: var(--bs);
 }
 
+.resume {
+    margin-bottom: 0;
+}
+
 .resume__link {
     color: inherit;
     font-size: var(--fs-icon);
@@ -391,6 +395,20 @@ canvas {
     .resume {
         margin: auto 0;
         text-align: left;
+    }
+}
+
+@media (max-width: 600px) {
+    .intro-container {
+        padding: 7em 2em;
+        padding-bottom: 5em;
+    }
+
+    .intro {
+        padding: 1em;
+        background: hsla(0, 0%, 80%, .3);
+        backdrop-filter: blur(1.75px);
+        border-radius: .5em;
     }
 }
 
